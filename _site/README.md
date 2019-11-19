@@ -1,2 +1,0 @@
-# piercedejong
-A personal website
