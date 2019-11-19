@@ -4,6 +4,16 @@ body{
     font-size: 16px;
 }
 
+.shadow-text {
+  text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
+             #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;
+  font-smooth: always;
+}
+
+.btn:hover{
+    text-shadow:none
+}
+
 .btext{
     color: #f9f3f4;
     position: absolute;
