@@ -30,6 +30,10 @@ body{
   font-size: 1.25rem;
 }
 
+.project-title, .project-description{
+color: #f9f3f4;
+}
+
 .btext{
     color: #f9f3f4;
     position: absolute;
