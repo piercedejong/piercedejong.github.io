@@ -18,6 +18,10 @@ body{
   font-size:
 }
 
+.btn-outline-light{
+  background-color: rgba(255,255,255,.20);
+}
+
 .btext{
     color: #f9f3f4;
     position: absolute;
