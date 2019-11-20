@@ -16,11 +16,13 @@ body{
 }
 
 .btn{
-  font-size:
+  color:white;
+  font-size:2rem;
 }
 
-.btn-outline-light{
-  background-color: rgba(255,255,255,.20);
+.btn:hover{
+  color:orange !important
+
 }
 
 .title{
@@ -95,6 +97,16 @@ h1{
   margin-left: 0.25rem;
   margin-bottom: 0.5rem;
   white-space: nowrap;
+}
+
+.link{
+  font-size: 3rem;
+  color:white;
+  margin:2rem;
+}
+
+.link:hover, .nav-link:hover, .navbar-brand:hover{
+  color:orange !important;
 }
 
 #particles-js{
