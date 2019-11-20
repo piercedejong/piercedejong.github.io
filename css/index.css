@@ -85,6 +85,18 @@ h1{
     font-size: 50px;
 }
 
+.skill{
+  border-radius: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+  margin-right:0.25rem;
+  margin-left: 0.25rem;
+  margin-bottom: 0.5rem;
+  white-space: nowrap;
+}
+
 #particles-js{
   background-size: cover;
   background-repeat: no-repeat;
