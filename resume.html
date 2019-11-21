@@ -1,245 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Bootstrap CSS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="/css/index.css">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="javascript/index.js"></script>
+  <script>document.getElementsByTagName("head")[0].innerHTML = loadPage("head.html");</script>
+  <!-- Particles -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <title>Resume - Pierce de Jong</title>
-  <meta name="description" content = "Personal website">
-  <meta name="author" content="Pierce de Jong">
+
 </head>
 <body>
-  <div id="particles-js" style="background-image: url(/images/background2.jpg); " ></div>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100" style="position:fixed">
-    <a class="navbar-brand" href="/">Pierce de Jong</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-center shadow-text" id="navbarTogglerDemo01">
-      <ul class="navbar-nav">
-        <li class="nav-item mx-4">
-          <a class="nav-link" href="/projects">Projects</a>
-        </li>
-        <li class="nav-item mx-4">
-          <a target="_blank" class="nav-link" href="mailto:pierce.dejong45@gmail.com">Contact</a>
-        </li>
-        <li class="nav-item mx-4">
-          <a class="nav-link" href="/links">Links</a>
-        </li>
-        <li class="nav-item mx-4 active">
-          <a class="nav-link" href="/resume">Resume<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item mx-4">
-          <a class="nav-link" href="/about">About</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <div style="padding-bottom:75px"></div>
-  <div class="container" style="overflow-y: scroll; height:90vh">
-    <h2 class="title">Resume - Under Construction</h2>
-    <div class="row">
-      <div class="col"></div>
-      <div class="col-10">
+  <div id="particles-js" style="background-image: url(/images/background2.jpg); position:fixed" ></div>
+  <div id="nav-placeholder"></div>
 
-        <section class="resume-section p-3 p-lg-4 d-flex align-items-center pb-0" id="education">
-          <div class="w-100">
-            <h2 class="mb-1">Education</h2>
+<div class="container" style="overflow-y: scroll; height:90vh">
+  <h2 class="title">Resume - Under Construction</h2>
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-10">
 
-            <div class="resume-item justify-content-between mb-0">
-              <div class="resume-content">
-                <div class="d-flex flex-wrap justify-content-between">
-                <h4 class="mb-0">University of Calgary</h4>
-                  <div class="resume-date">
-                <span class="text-warning">August 2015 - December 2020 (Anticipated Graduation)</span>
-                  </div>
+      <section class="resume-section p-3 p-lg-4 d-flex align-items-center pb-0" id="education">
+        <div class="w-100">
+          <h2 class="mb-1">Education</h2>
+
+          <div class="resume-item justify-content-between mb-0">
+            <div class="resume-content">
+              <div class="d-flex flex-wrap justify-content-between">
+              <h4 class="mb-0">University of Calgary</h4>
+                <div class="resume-date">
+              <span class="text-warning">August 2015 - December 2020 (Anticipated Graduation)</span>
                 </div>
-
-                <h5 class="mb-3">Bachelor of Science in Computer Science</h5>
-            </div>
-
-          </div>
-        </section>
-
-
-        <section class="resume-section p-3 p-lg-4 d-flex justify-content-center" id="work-experience">
-          <div class="w-100">
-            <h2 class="mb-3">Work Experience</h2>
-
-            <div class="work-item justify-content-between mb-5 shadow-text">
-              <div class="resume-content">
-                <div class="d-flex flex-wrap justify-content-between">
-                  <h4 class="mb-0">AUTOMATION SPECIALIST</h4>
-                  <div class="resume-date">
-                    <span class="text-warning">July 2019 - Present</span>
-                  </div>
-                </div>
-                <h5 class="mb-3">Spartan Controls</h5>
-                <ul class="fa-ul mb-0">
-                  <li>
-                    <i class="fa-li fa fa-check"></i>
-                    Developed a license key generator to connect hardware and software</li>
-                  <li>
-                    <i class="fa-li fa fa-check"></i>
-                    Created a flexible UI framework for other departments to adapt to their products</li>
-                  <li>
-                    <i class="fa-li fa fa-check"></i>
-                    Generated an algorithm to make different license keys unlocking specific features of the hardware</li>
-                  <li>
-                    <i class="fa-li fa fa-check"></i>
-                    Built SCADA screens for Oil and Gas data analytics</li>
-                </ul>
               </div>
-            </div>
 
-            <div class="work-item justify-content-between mb-5 shadow-text">
-              <div class="resume-content">
-                <div class="d-flex flex-wrap justify-content-between">
-                  <h4 class="mb-0">FIELD ORGANIZER</h4>
-                  <div class="resume-date">
-                    <span class="text-warning">August 2018 - November 2018</span>
-                  </div>
-                </div>
-                <h5 class="mb-3">Beto For Texas U.S. Senate Campaign</h5>
-                <ul class="fa-ul mb-0">
-                  <li>
-                    <i class="fa-li fa fa-check"></i>
-                    Managed Plano Campaign Headquarters; supervised 3 volunteer led field offices, coordinated upwards of 50 volunteers at a time</li>
-                  <li>
-                    <i class="fa-li fa fa-check"></i>
-                    Responsible for reaching out to voters through technology and face-to-face contact</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="work-item justify-content-between mb-5 shadow-text">
-              <div class="resume-content">
-                <div class="d-flex flex-wrap justify-content-between">
-                  <h4 class="mb-0">TECHNICAL SALES SPECIALIST</h4>
-                  <div class="resume-date">
-                    <span class="text-warning">May 2018 - August 2018</span>
-                  </div>
-                </div>
-                <h5 class="mb-3">Spartan Controls</h5>
-                <ul class="fa-ul mb-0">
-                  <li>
-                    <i class="fa-li fa fa-check"></i>
-                    Developed Android app to communicate with oil and gas sensors in the field, removing the need to bring a laptop to get data and run diagnostics</li>
-                  <li>
-                    <i class="fa-li fa fa-check"></i>
-                    Used DNP3 protocol to connect to the sensor over WIFI</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="work-item justify-content-between mb-5 shadow-text">
-              <div class="resume-content">
-                <div class="d-flex flex-wrap justify-content-between">
-                  <h4 class="mb-0">SOFTWARE ENGINEER</h4>
-                  <div class="resume-date">
-                    <span class="text-warning">May 2017 - July 2017</span>
-                  </div>
-                </div>
-                <h5 class="mb-3">Threatcare</h5>
-                <ul class="fa-ul mb-0">
-                  <li>
-                    <i class="fa-li fa fa-check"></i>
-                    Built a Two-Factor Authentication system</li>
-                  <li>
-                    <i class="fa-li fa fa-check"></i>
-                    Created website white-list and black-list online tests</li>
-                  <li>
-                    <i class="fa-li fa fa-check"></i>
-                    Assisted in migrating and redesigning the website to a new platform</li>
-                </ul>
-              </div>
-            </div>
-
+              <h5 class="mb-3">Bachelor of Science in Computer Science</h5>
           </div>
 
-        </section>
+        </div>
+      </section>
 
-        <section class="resume-section p-3 p-lg-4 d-flex justify-content-center shadow-text" id="skills">
-          <div class="w-100">
-            <h2 class="mb-3">Skills &amp; Core Competencies</h2>
 
-            <h4 class="mb-3">Programming Languages</h4>
-            <div class="d-flex flex-wrap mb-5">
-              <p class="skill">Java (Swing)</p>
-              <p class="skill">Ruby (on Rails)</p>
-              <p class="skill">Javascript (jQuery)</p>
-              <p class="skill">HTML</p>
-              <p class="skill">CSS</p>
-              <p class="skill">Python</p>
-              <p class="skill">ARMv7/v8</p>
+      <section class="resume-section p-3 p-lg-4 d-flex justify-content-center" id="work-experience">
+        <div class="w-100">
+          <h2 class="mb-3">Work Experience</h2>
+
+          <div class="work-item justify-content-between mb-5 shadow-text">
+            <div class="resume-content">
+              <div class="d-flex flex-wrap justify-content-between">
+                <h4 class="mb-0">AUTOMATION SPECIALIST</h4>
+                <div class="resume-date">
+                  <span class="text-warning">July 2019 - Present</span>
+                </div>
+              </div>
+              <h5 class="mb-3">Spartan Controls</h5>
+              <ul class="fa-ul mb-0">
+                <li>
+                  <i class="fa-li fa fa-circle"></i>
+                  Developed a license key generator to connect hardware and software</li>
+                <li>
+                  <i class="fa-li fa fa-check"></i>
+                  Created a flexible UI framework for other departments to adapt to their products</li>
+                <li>
+                  <i class="fa-li fa fa-check"></i>
+                  Generated an algorithm to make different license keys unlocking specific features of the hardware</li>
+                <li>
+                  <i class="fa-li fa fa-check"></i>
+                  Built SCADA screens for Oil and Gas data analytics</li>
+              </ul>
             </div>
+          </div>
 
-            <h4 class="mb-3">Software &amp; Tools</h4>
-            <div class="d-flex flex-wrap mb-5">
-              <p class="skill">Git</p>
-              <p class="skill">Heroku</p>
-              <p class="skill">Eclipse</p>
-              <p class="skill">Bootstrap</p>
-              <p class="skill">PostgreSQL</p>
-              <p class="skill">Android Studio</p>
-              <p class="skill">Microsoft Office</p>
+          <div class="work-item justify-content-between mb-5 shadow-text">
+            <div class="resume-content">
+              <div class="d-flex flex-wrap justify-content-between">
+                <h4 class="mb-0">FIELD ORGANIZER</h4>
+                <div class="resume-date">
+                  <span class="text-warning">August 2018 - November 2018</span>
+                </div>
+              </div>
+              <h5 class="mb-3">Beto For Texas U.S. Senate Campaign</h5>
+              <ul class="fa-ul mb-0">
+                <li>
+                  <i class="fa-li fa fa-check"></i>
+                  Managed Plano Campaign Headquarters; supervised 3 volunteer led field offices, coordinated upwards of 50 volunteers at a time</li>
+                <li>
+                  <i class="fa-li fa fa-check"></i>
+                  Responsible for reaching out to voters through technology and face-to-face contact</li>
+              </ul>
             </div>
-
-            <h4 class="mb-2">Project Managment &amp; Supervision</h4>
-            <p class="mb-5">Worked as a Production Assistant on the set of Fortunate Sons. Managed and locked down the set during filming.</p>
-
-            <h4 class="mb-2">Flexibility</h4>
-            <p class="mb-5">Produced and delivered an education lesson for elementary age children in rural Honduras covering basic hygiene over one week with the non-profit, M.E.D.I.C.O.</p>
-
-            <h4 class="mb-3">Workflow</h4>
-            <ul class="fa-ul mb-0">
-              <li>
-                <i class="fa-li fa fa-check"></i>
-                Mobile-First, Responsive Design</li>
-              <li>
-                <i class="fa-li fa fa-check"></i>
-                Cross Browser Testing &amp; Debugging</li>
-              <li>
-                <i class="fa-li fa fa-check"></i>
-                Cross Functional Teams</li>
-              <li>
-                <i class="fa-li fa fa-check"></i>
-                Agile Development &amp; Scrum</li>
-            </ul>
           </div>
-        </section>
 
-        <hr class="m-0">
-
-        <!-- <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="interests">
-          <div class="w-100">
-            <h2 class="mb-5">Interests</h2>
-            <p>Apart from being a web developer, I enjoy most of my time being outdoors. In the winter, I am an avid skier and novice ice climber. During the warmer months here in Colorado, I enjoy mountain biking, free climbing, and kayaking.</p>
-            <p class="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technology advancements in the front-end web development world.</p>
+          <div class="work-item justify-content-between mb-5 shadow-text">
+            <div class="resume-content">
+              <div class="d-flex flex-wrap justify-content-between">
+                <h4 class="mb-0">TECHNICAL SALES SPECIALIST</h4>
+                <div class="resume-date">
+                  <span class="text-warning">May 2018 - August 2018</span>
+                </div>
+              </div>
+              <h5 class="mb-3">Spartan Controls</h5>
+              <ul class="fa-ul mb-0">
+                <li>
+                  <i class="fa-li fa fa-check"></i>
+                  Developed Android app to communicate with oil and gas sensors in the field, removing the need to bring a laptop to get data and run diagnostics</li>
+                <li>
+                  <i class="fa-li fa fa-check"></i>
+                  Used DNP3 protocol to connect to the sensor over WIFI</li>
+              </ul>
+            </div>
           </div>
-        </section>
 
-        <hr class="m-0"> -->
+          <div class="work-item justify-content-between mb-5 shadow-text">
+            <div class="resume-content">
+              <div class="d-flex flex-wrap justify-content-between">
+                <h4 class="mb-0">SOFTWARE ENGINEER</h4>
+                <div class="resume-date">
+                  <span class="text-warning">May 2017 - July 2017</span>
+                </div>
+              </div>
+              <h5 class="mb-3">Threatcare</h5>
+              <ul class="fa-ul mb-0">
+                <li>
+                  <i class="fa-li fa fa-check"></i>
+                  Built a Two-Factor Authentication system</li>
+                <li>
+                  <i class="fa-li fa fa-check"></i>
+                  Created website white-list and black-list online tests</li>
+                <li>
+                  <i class="fa-li fa fa-check"></i>
+                  Assisted in migrating and redesigning the website to a new platform</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <section class="resume-section p-3 p-lg-4 d-flex justify-content-center shadow-text" id="skills">
+        <div class="w-100">
+          <h2 class="mb-3">Skills &amp; Core Competencies</h2>
+
+          <h4 class="mb-3">Programming Languages</h4>
+          <div class="d-flex flex-wrap mb-5">
+            <p class="skill">Java (Swing)</p>
+            <p class="skill">Ruby (on Rails)</p>
+            <p class="skill">Javascript (jQuery)</p>
+            <p class="skill">HTML</p>
+            <p class="skill">CSS</p>
+            <p class="skill">Python</p>
+            <p class="skill">ARMv7/v8</p>
+          </div>
+
+          <h4 class="mb-3">Software &amp; Tools</h4>
+          <div class="d-flex flex-wrap mb-5">
+            <p class="skill">Git</p>
+            <p class="skill">Heroku</p>
+            <p class="skill">Eclipse</p>
+            <p class="skill">Bootstrap</p>
+            <p class="skill">PostgreSQL</p>
+            <p class="skill">Android Studio</p>
+            <p class="skill">Microsoft Office</p>
+          </div>
+
+          <h4 class="mb-2">Project Managment &amp; Supervision</h4>
+          <p class="mb-5">Worked as a Production Assistant on the set of Fortunate Sons. Managed and locked down the set during filming.</p>
+
+          <h4 class="mb-2">Flexibility</h4>
+          <p class="mb-5">Produced and delivered an education lesson for elementary age children in rural Honduras covering basic hygiene over one week with the non-profit, M.E.D.I.C.O.</p>
+
+          <h4 class="mb-3">Workflow</h4>
+          <ul class="fa-ul mb-0">
+            <li>
+              <i class="fa-li fa fa-check"></i>
+              Mobile-First, Responsive Design</li>
+            <li>
+              <i class="fa-li fa fa-check"></i>
+              Cross Browser Testing &amp; Debugging</li>
+            <li>
+              <i class="fa-li fa fa-check"></i>
+              Cross Functional Teams</li>
+            <li>
+              <i class="fa-li fa fa-check"></i>
+              Agile Development &amp; Scrum</li>
+          </ul>
+        </div>
+      </section>
+
+      <hr class="m-0">
+
+      <!-- <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="interests">
+        <div class="w-100">
+          <h2 class="mb-5">Interests</h2>
+          <p>Apart from being a web developer, I enjoy most of my time being outdoors. In the winter, I am an avid skier and novice ice climber. During the warmer months here in Colorado, I enjoy mountain biking, free climbing, and kayaking.</p>
+          <p class="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technology advancements in the front-end web development world.</p>
+        </div>
+      </section>
+
+      <hr class="m-0"> -->
 
       </div>
       <div class="col"></div>
+      </div>
     </div>
+  </div>
 
+<script>document.getElementById('nav-placeholder').innerHTML = loadPage('navbar.html');;particlesJS.load('particles-js', 'json/particles.json',function(){console.log('particles.json loaded...')}) </script>
 
-
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="https://code.jquery.com/jquery-4.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script> particlesJS.load('particles-js', 'json/particles.json',function(){console.log('particles.json loaded...')}) </script>
-  </body>
+</body>
 </html>

@@ -1,45 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="/css/index.css">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="javascript/index.js"></script>
+  <script>document.getElementsByTagName("head")[0].innerHTML = loadPage("head.html");</script>
+  <!-- Particles -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <title>Pierce de Jong</title>
-  <meta name="description" content = "Personal website">
-  <meta name="author" content="Pierce de Jong">
+
 </head>
 <body>
-    <div id="particles-js" class="align-items-center justify-content-center"style="background-image: url(/images/background2.jpg); " ></div>
-    <div class="container">
-      <div class="row align-items-center" style="height:100vh">
-        <div class="mx-auto">
-          <h1 class="title shadow-text text-center">Pierce de Jong</h1>
-          <p class="sub-title shadow-text text-center mx-1" >4th Year Computer Science Student @ Univeristy of Calgary</p>
-          <div class="text-center">
-            <a href="/projects"><button type="button" class="btn btn-link shadow-text mx-1">Projects</button></a>
-            <a href="/resume"><button type="button" class="btn btn-link shadow-text mx-1">Resume</button></a>
-            <a href="/about"><button type="button" class="btn btn-link shadow-text mx-1">About Me</button></a>
-          </div>
-          <div class="text-center content">
-            <a href="mailto:pierce.dejong45@gmail.com" target="_blank" class="link"><i class="fas fa-envelope" aria-hidden="true"></i></a>
-            <a href="https://www.linkedin.com/in/pierce-de-jong-12155b158/" target="_blank" class="link"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
-            <a href="https://github.com/piercedejong" target="_blank" class="link"><i class="fab fa-github"></i></a>
-          </div>
+  <div id="particles-js" style="background-image: url(/images/background2.jpg); position:fixed" ></div>
+  <div id="nav-placeholder"></div>
+  <div class="container">
+    <div class="row align-items-center" style="height:80vh">
+      <div class="mx-auto">
+        <h1 class="title shadow-text text-center">Pierce de Jong</h1>
+        <p class="sub-title shadow-text text-center mx-1" >4th Year Computer Science Student @ Univeristy of Calgary</p>
+        <div class="text-center content">
+          <a href="mailto:pierce.dejong45@gmail.com" target="_blank" class="link"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/in/pierce-de-jong-12155b158/" target="_blank" class="link"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+          <a href="https://github.com/piercedejong" target="_blank" class="link"><i class="fab fa-github"></i></a>
         </div>
       </div>
     </div>
+  </div>
 
-
-
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script> particlesJS.load('particles-js', 'json/particles.json',function(){console.log('particles.json loaded...')}) </script>
+  <script>document.getElementById('nav-placeholder').innerHTML = loadPage('navbar.html');;particlesJS.load('particles-js', 'json/particles.json',function(){console.log('particles.json loaded...')}) </script>
 </body>
 </html>

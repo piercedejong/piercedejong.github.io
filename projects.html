@@ -1,49 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Bootstrap CSS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="/css/index.css">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="javascript/index.js"></script>
+  <script>document.getElementsByTagName("head")[0].innerHTML = loadPage("head.html");</script>
+  <!-- Particles -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <title>Projects - Pierce de Jong</title>
-  <meta name="description" content = "Personal website">
-  <meta name="author" content="Pierce de Jong">
+
 </head>
 <body>
-  <div id="particles-js" style="background-image: url(/images/background2.jpg); " ></div>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100" style="position:fixed;">
-    <a class="navbar-brand" href="/">Pierce de Jong</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-center" id="navbarTogglerDemo01">
-      <ul class="navbar-nav">
-        <li class="nav-item mx-4 active">
-          <a class="nav-link" href="/projects">Projects <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item mx-4">
-          <a target="_blank" class="nav-link" href="mailto:pierce.dejong45@gmail.com">Contact</a>
-        </li>
-        <li class="nav-item mx-4">
-          <a class="nav-link" href="/links">Links</a>
-        </li>
-        <li class="nav-item mx-4">
-          <a class="nav-link" href="/resume">Resume</a>
-        </li>
-        <li class="nav-item mx-4">
-          <a class="nav-link" href="/about">About</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <div style="padding-bottom:75px">
-  </div>
+  <div id="particles-js" style="background-image: url(/images/background2.jpg); position:fixed" ></div>
+  <div id="nav-placeholder"></div>
   <div class="container shadow-text" style="overflow-y: scroll; height:90vh">
 
     <!-- Page Heading -->
@@ -100,10 +67,6 @@
     </div>
   </div>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="https://code.jquery.com/jquery-4.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script> particlesJS.load('particles-js', 'json/particles.json',function(){console.log('particles.json loaded...')}) </script>
-  </body>
+  <script>document.getElementById('nav-placeholder').innerHTML = loadPage('navbar.html');;particlesJS.load('particles-js', 'json/particles.json',function(){console.log('particles.json loaded...')}) </script>
+</body>
 </html>
