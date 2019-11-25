@@ -11,7 +11,7 @@ body{
   font-smooth: always;
 }
 
-.btn:hover{
+.btn{
     text-shadow:none
 }
 
@@ -21,7 +21,7 @@ body{
 }
 
 .btn:hover{
-  color:orange !important
+  /* color:orange !important */
 
 }
 
