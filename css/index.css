@@ -93,7 +93,7 @@ h1{
   white-space: nowrap;
 }
 
-.link{
+.link, .link-sm{
   font-size: 3rem;
   color:white;
   margin:2rem;
@@ -103,8 +103,13 @@ h1{
   font-size: 1rem;
 }
 
-.link:hover, .nav-link:hover, .navbar-brand:hover{
+.link-sm{
+  font-size: 1rem;
+}
+
+.link:hover, .nav-link:hover, .navbar-brand:hover, .link-sm:hover{
   color:orange !important;
+  text-decoration: none;
 }
 
 #particles-js{
@@ -116,3 +121,8 @@ h1{
   position: fixed;
   width:100%;
 }
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; // remove the gap so it doesn't close
+ }
