@@ -25,6 +25,12 @@ body{
 
 }
 
+.container-background{
+  background-color: rgba(50,50,50,0.5);
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
 .title{
   font-size: 3.5rem;
 }
