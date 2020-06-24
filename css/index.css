@@ -31,8 +31,36 @@ body{
     padding:15px 0px
 }
 
+.card-resume{
+    background-color: rgba(255,255,240,.9);
+    border-radius: 25px;
+    padding:15px;
+    color:black
+}
 
-.centered-horitontal{
+.skill-title{
+    font-size: 1rem;
+    margin-bottom: 2px;
+}
+
+.skill{
+    font-size: 0.8rem;
+}
+
+.work-extra, .education-extra{
+    width: 30%
+}
+
+.work-information{
+
+}
+
+.work-position, .education-type, .volunteer-position{
+    font-size: 1rem
+}
+
+.section-title{
+    border-bottom: 2px black solid;
 }
 
 .navbar, .nav-links, .link{
