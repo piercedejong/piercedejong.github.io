@@ -68,7 +68,7 @@ window.onload = function() {
                 $(element).text(($(element).text()*0.95).toFixed(2))
                 $(element).parent().parent().css("background-color", "rgba(255, 77, 77, 0.3)");
                 if(g==0){
-                    $("#stonks").attr('src','/images/notstonks.jpg');
+                    $("#stonks").attr('src','/images/notStonks.jpg');
                     $("#stonks").removeClass("btn-stonks")
                     $("#stonks").addClass("btn-not-stonks")
                 }
@@ -78,7 +78,7 @@ window.onload = function() {
                 $(element).text(($(element).text()*0.8).toFixed(2))
                 $(element).parent().parent().css("background-color", "rgba(255, 77, 77, 0.3)");
                 if(g==0){
-                    $("#stonks").attr('src','/images/notstonks.jpg');
+                    $("#stonks").attr('src','/images/notStonks.jpg');
                     $("#stonks").removeClass("btn-stonks")
                     $("#stonks").addClass("btn-not-stonks")
                 }
@@ -87,7 +87,7 @@ window.onload = function() {
                 $(element).text(($(element).text()*0.87).toFixed(2))
                 $(element).parent().parent().css("background-color", "rgba(255, 77, 77, 0.3)");
                 if(g==0){
-                    $("#stonks").attr('src','/images/notstonks.jpg');
+                    $("#stonks").attr('src','/images/notStonks.jpg');
                     $("#stonks").removeClass("btn-stonks")
                     $("#stonks").addClass("btn-not-stonks")
                 }
