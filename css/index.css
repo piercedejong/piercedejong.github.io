@@ -82,3 +82,66 @@ a:hover{
     color: orange ;
     text-decoration: none
 }
+
+.container-project0{
+        /* background-color: rgba(255,255,255,0.1); */
+}
+
+.market-cap{
+    text-shadow: none;
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+    display: inline-block;
+    font-weight: 400;
+    text-align: right;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    padding: .1rem .25rem;
+    padding-left: 0.9rem;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+}
+
+.card-subtitle{
+    color: darkgrey;
+}
+
+.stock{
+    border-bottom: 1px solid rgba(255,255,255,.25);
+}
+
+.btn-stonks{
+    border-radius: 0.5rem;
+    box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2), 4px 6px 20px 0 rgba(0, 0, 0, 0.5);
+}
+
+.btn-stonks:hover{
+    border-radius: 0.5rem;
+    box-shadow: 0px 8px 12px 0 rgba(40, 167, 69, 0.3), 0 10px 24px 0 rgba(40, 167, 69, 0.5);
+}
+
+.btn--not-stonks{
+    border-radius: 0.5rem;
+    box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2), 4px 6px 20px 0 rgba(0, 0, 0, 0.5);
+}
+
+.btn-not-stonks:hover{
+    border-radius: 0.5rem;
+    box-shadow: 0px 8px 12px 0 rgba(255, 77, 77, 0.3), 0 10px 24px 0 rgba(255, 77, 77, 0.5);
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
