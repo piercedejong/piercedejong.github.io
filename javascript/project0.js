@@ -5,7 +5,7 @@ window.onload = function() {
     var x = 0
     var chart = new CanvasJS.Chart("chartContainer", {
     	animationEnabled: true,
-    	theme: "dark1",
+    	theme: "dark2",
     	title:{
     		text: "GameStop Stock Price"
     	},
@@ -33,9 +33,11 @@ window.onload = function() {
         $( ".stock-price" ).each(function( index, element ) {
             var x = Math.floor(Math.random() * 25) + 1
             if(x<=1){
-                $(element).text(($(element).text()*1.4).toFixed(2))
+                $(element).text(($(element).text()*1.5).toFixed(2))
                 $(element).parent().parent().css("background-color", "rgba(40, 167, 69, 0.3)");
                 if(g==0){
+                    var audio = new Audio('/images/stonks.mp3');
+                    audio.play();
                     $("#stonks").attr('src','/images/stonks1.jpg');
                     $("#stonks").addClass("btn-stonks")
                     $("#stonks").removeClass("btn-not-stonks")
@@ -83,7 +85,7 @@ window.onload = function() {
                     $("#stonks").addClass("btn-not-stonks")
                 }
             }
-            else if(x<=53){
+            else {
                 $(element).text(($(element).text()*0.87).toFixed(2))
                 $(element).parent().parent().css("background-color", "rgba(255, 77, 77, 0.3)");
                 if(g==0){
