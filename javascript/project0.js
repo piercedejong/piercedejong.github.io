@@ -33,7 +33,7 @@ window.onload = function() {
         $( ".stock-price" ).each(function( index, element ) {
             var x = Math.floor(Math.random() * 25) + 1
             if(x<=1){
-                $(element).text(($(element).text()*1.5).toFixed(2))
+                $(element).text(($(element).text()*1.4).toFixed(2))
                 $(element).parent().parent().css("background-color", "rgba(40, 167, 69, 0.3)");
                 if(g==0){
                     $("#stonks").attr('src','/images/stonks1.jpg');
@@ -57,7 +57,7 @@ window.onload = function() {
                     $("#stonks").removeClass("btn-not-stonks")
                 }
             }else if(x<=22){
-                $(element).text(($(element).text()*1.1).toFixed(2))
+                $(element).text(($(element).text()*1.09).toFixed(2))
                 $(element).parent().parent().css("background-color", "rgba(40, 167, 69, 0.3)")
                 if(g==0){
                     $("#stonks").attr('src','/images/stonks1.jpg');
