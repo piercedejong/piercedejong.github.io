@@ -42,6 +42,14 @@ window.onload = function() {
                     $("#stonks").addClass("btn-stonks")
                     $("#stonks").removeClass("btn-not-stonks")
                 }
+            }else if(x<=5){
+                $(element).text(($(element).text()*1.2).toFixed(2))
+                $(element).parent().parent().css("background-color", "rgba(40, 167, 69, 0.3)");
+                if(g==0){
+                    $("#stonks").attr('src','/images/stonks1.jpg');
+                    $("#stonks").addClass("btn-stonks")
+                    $("#stonks").removeClass("btn-not-stonks")
+                }
             }else if(x<=15){
                 $(element).text(($(element).text()*1.02).toFixed(2))
                 $(element).parent().parent().css("background-color", "rgba(40, 167, 69, 0.3)");
