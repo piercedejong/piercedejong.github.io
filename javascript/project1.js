@@ -45,7 +45,7 @@ window.onload = function() {
         	navigator.mediaDevices.mozGetUserMedia;
 
         // ask for an audio input
-        navigator.getUserMedia(
+        navigator.mediaDevices.getUserMedia(
         {
             "audio": {
                 "mandatory": {
