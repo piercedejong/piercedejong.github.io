@@ -39,13 +39,13 @@ window.onload = function() {
     // Attempt to get audio input
     try {
         // monkeypatch getUserMedia
-        navigator.getUserMedia =
-        	navigator.getUserMedia ||
-        	navigator.webkitGetUserMedia ||
-        	navigator.mozGetUserMedia;
+        navigator.mediaDevices.getUserMedia =
+        	navigator.mediaDevices.getUserMedia ||
+        	navigator.mediaDevices.webkitGetUserMedia ||
+        	navigator.mediaDevices.mozGetUserMedia;
 
         // ask for an audio input
-        navigator.getUserMedia(
+        navigator.mediaDevices.getUserMedia(
         {
             "audio": {
                 "mandatory": {
