@@ -45,7 +45,7 @@ window.onload = function() {
         	navigator.mediaDevices.mozGetUserMedia;
 
         // ask for an audio input
-        navigator.mediaDevices.getUserMedia(
+        navigator.getUserMedia(
         {
             "audio": {
                 "mandatory": {
@@ -58,7 +58,7 @@ window.onload = function() {
             },
         }, gotStream, didntGetStream);
     } catch (e) {
-        alert('getUserMedia threw exception :' + e);
+        alert('getUserMedianot supported on your browser! :' + e);
     }
 }
 
@@ -69,6 +69,7 @@ function didntGetStream() {
 var mediaStreamSource = null;
 
 function gotStream(stream) {
+    console.log("hello")
     audioContext.resume();
     // Create an AudioNode from the stream.
     mediaStreamSource = audioContext.createMediaStreamSource(stream);
@@ -85,7 +86,7 @@ function drawLoop( time) {
     // clear the background
     canvasContext.clearRect(0,0,WIDTH,HEIGHT);
 
-    loundness.push(meter.volume)
+
 
     // check if we're currently clipping
     if (meter.checkClipping()){
@@ -95,7 +96,7 @@ function drawLoop( time) {
         canvasContext.fillStyle = "green";
         canvasContext2.fillStyle = "rgba(0,255,0,0.2)"
     }
-
+    loundness.push(meter.volume)
     if(meter.volume > maxVolume){
         maxVolume = meter.volume
         canvasContext2.clearRect(0,0,WIDTH,HEIGHT);
@@ -172,8 +173,6 @@ function startGame(){
     $("#player-entry").hide()
     $("#instructions").hide()
     $("#winners").hide()
-
-    console.log(window.innerWidth+50)
     canvasContext.width = 200
     canvasContext2.width = 200
     canvasMatch.width = 200
@@ -188,7 +187,6 @@ function startGame(){
         canvasMatch.fillStyle = "rgba(0,0,0,0.8)"
         canvasMatch.fillRect(0, 0, matchSound*WIDTH, HEIGHT);
     }else{
-        console.log("hell")
     }
 
     drawLoop();
