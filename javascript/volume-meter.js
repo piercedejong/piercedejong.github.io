@@ -1,3 +1,5 @@
+//This comes from https://github.com/cwilso/volume-meter
+
 function createAudioMeter(audioContext,clipLevel,averaging,clipLag) {
 	var processor = audioContext.createScriptProcessor(512);
 	processor.onaudioprocess = volumeAudioProcess;

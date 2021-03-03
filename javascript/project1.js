@@ -17,7 +17,9 @@ var matchSound = 0
 var loundness=[]
 var loud = []
 
-
+// Sources Used
+//https://github.com/cwilso/volume-meter
+// Tutorials from CPSC 581 Winter 2021
 
 window.onload = function() {
 
@@ -160,12 +162,19 @@ function startGame(){
     // canvasMatch.strokeRect(0, 0, window.innerWidth, window.innerHeight);
 
     if(gameChoice == "match"){
-        $("#mode-instruction").text(" , match the black bars with your voice in ")
-        $("#instruction").text("Match The Balck Bar!")
+        $("#mode-instruction").text(", match the black bars with your voice in ")
+        $("#mode-instruction2").hide()
+        $("#instruction").text("Match The Black Bar!")
         matchSound = (Math.random() * (0.500 - 0.150) + 0.150).toFixed(4)
         canvasMatch.fillStyle = "rgba(0,0,0,0.8)"
         canvasMatch.fillRect(0, 0, matchSound*WIDTH, HEIGHT);
+    }else if(gameChoice == "quiet"){
+        $("#mode-instruction").text(", start making noise into the microphone in ")
+        $("#mode-instruction2").text("Failure to make noise is an automatic disqualification")
+        $("#instruction").text("Make Noise (Quietly)!")
     }else{
+        $("#instruction").text("Make Noise!")
+        $("#mode-instruction2").hide()
     }
 
     drawLoop();
@@ -235,11 +244,33 @@ function playerTurn(){
             // $("#loundness").show()
             // $("#maxVolume").text(maxVolume.toFixed(2))
 
+
             averageVolume = 0
-            for(i=0;i<loud.length;i++){
-                averageVolume+=loud[i]
+            if(gameChoice =="quiet"){
+                count = 0
+                for(i=0;i<loud.length;i++){
+                    //console.log(loud[i])
+                    if(loud[i]>0.002){
+                        averageVolume+=loud[i]
+                        count++;
+                    }
+                }
+                if(count<40){
+                    alert("You have been disqualified for not making noise for long enough!")
+                    playerData[currentIndex][3] = false
+                }else{
+                    playerData[currentIndex][3] = true
+                }
+                //console.log(averageVolume)
+                averageVolume = averageVolume / count
+            }else{
+                for(i=0;i<loud.length;i++){
+                    averageVolume+=loud[i]
+                }
+                averageVolume = averageVolume / loud.length
+                playerData[currentIndex][3] = true
             }
-            averageVolume = averageVolume / loud.length
+
 
             playerData[currentIndex][1] = averageVolume
             playerData[currentIndex][2] = maxVolume
@@ -261,13 +292,13 @@ function playerTurn(){
 function gameOver(){
     var sortedArray = playerData.sort(function(a, b) { return a[1] - b[1]; });
 
-    if(gameChoice == "loudest"){
+    if(gameChoice == "loud"){
         sortedArray = sortedArray.reverse()
-    }else {
+    }else if(gameChoice =="match"){
         sortedArray = sortedArray.sort((a, b) => Math.abs(a[1] -  matchSound) - Math.abs(b[1] - matchSound));
     }
 
-    console.log(sortedArray)
+    //console.log(sortedArray)
 
     $("#current-player").hide()
     $("#remiainig-time").hide()
@@ -284,23 +315,36 @@ function gameOver(){
 
     $("#canvas").hide()
 
-    $("#winner").text(sortedArray[0][0])
-    if(sortedArray.length>1){
-        $("#second").text(sortedArray[1][0])
-        if(sortedArray.length>2){
-            $("#third").text(sortedArray[2][0])
+    finalArray = []
+
+    for(i=0;i<sortedArray.length;i++){
+        if(sortedArray[i][3]== true){
+            finalArray.push(sortedArray[i])
+        }
+    }
+    $("#winners").show()
+    if(finalArray.length>0){
+        $("#winner").text(finalArray[0][0])
+        if(finalArray.length>1){
+            $("#second").text(finalArray[1][0])
+            if(finalArray.length>2){
+                $("#third").text(finalArray[2][0])
+            }else{
+                $("#third").hide()
+                $("#third-step").hide()
+            }
         }else{
             $("#third").hide()
             $("#third-step").hide()
+            $("#second").hide()
+            $("#second-step").hide()
         }
-    }else{
-        $("#third").hide()
-        $("#third-step").hide()
-        $("#second").hide()
-        $("#second-step").hide()
-    }
 
-    $("#winners").show()
+
+    }else{
+        alert("Everyone was disqualified!")
+        $("#podium").hide()
+    }
 }
 
 
