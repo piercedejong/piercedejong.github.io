@@ -1,0 +1,68 @@
+#podium-box {
+  margin: 0 auto;
+  display: flex;
+}
+
+.podium-number {
+  font-family: DaggerSquare;
+  font-weight: bold;
+  font-size: 4em;
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.step-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.step-container>div:first-child {
+  margin-top: auto;
+  text-align: center;
+}
+
+.step {
+  text-align: center;
+}
+
+.bg-blue {
+  background-color: orange;
+}
+
+#first-step {
+  height: 50%;
+}
+
+#second-step {
+  height: 35%;
+}
+
+#third-step {
+  height: 25%;
+}
+
+
+#winner {
+  display: inline-block;
+  position: relative;
+}
+
+#winner:before {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: -18px;
+  left: 70%;
+  background-image: url(https://png.pngtree.com/svg/20170904/the_golden_crown_309708.png);
+  background-size: 100%;
+  content: "";
+}
+
+.card-instructions{
+    background-color: rgba(0,0,0,0.4);
+    border-radius: 25px;
+    margin:15px;
+    padding:15px;
+    color:white
+}
