@@ -30,36 +30,59 @@ window.onload = function() {
 
     maxLoundness = 0;
 
-    // monkeypatch Web Audio
-    window.AudioContext = window.AudioContext || window.webkitAudioContext;
+    audioContext = new(window.AudioContext || window.webkitAudioContext)(); // cross-browser
+    var microphone;
 
-    // grab an audio context
-    audioContext = new AudioContext();
+    var analyser = audioContext.createAnalyser();
 
-    // Attempt to get audio input
-    try {
-        // monkeypatch getUserMedia
-        navigator.mediaDevices.getUserMedia =
-        	navigator.mediaDevices.getUserMedia ||
-        	navigator.mediaDevices.webkitGetUserMedia ||
-        	navigator.mediaDevices.mozGetUserMedia;
-
-        // ask for an audio input
-        navigator.getUserMedia(
-        {
-            "audio": {
-                "mandatory": {
-                    "googEchoCancellation": "false",
-                    "googAutoGainControl": "false",
-                    "googNoiseSuppression": "false",
-                    "googHighpassFilter": "false"
-                },
-                "optional": []
-            },
-        }, gotStream, didntGetStream);
-    } catch (e) {
-        alert('getUserMedianot supported on your browser! :' + e);
+    //main block for doing the audio recording
+    if (navigator.mediaDevices.getUserMedia) {
+        console.log('getUserMedia supported.');
+        var constraints = { audio: true } // ask for audio media, not video
+        navigator.mediaDevices.getUserMedia(constraints)
+            .then(
+                function(stream) {
+                    // microphone = audioContext.createMediaStreamSource(stream); // source node = microphone
+                    // microphone.connect(analyser); // connect microphone node to analyser node
+                    //analyser.connect(audioContext.destination); // connect analyser node to destination aka speakers. omit this line for no output
+                    //beginRecording();
+                    gotStream(stream)
+                })
+            .catch(function(err) { console.log('The following error occured: ' + err); })
+    } else {
+        console.log('getUserMedia not supported on your browser!');
     }
+
+    // // monkeypatch Web Audio
+    // window.AudioContext = window.AudioContext || window.webkitAudioContext;
+    //
+    // // grab an audio context
+    // audioContext = new AudioContext();
+    //
+    // // Attempt to get audio input
+    // try {
+    //     // monkeypatch getUserMedia
+    //     navigator.mediaDevices.getUserMedia =
+    //     	navigator.mediaDevices.getUserMedia ||
+    //     	navigator.mediaDevices.webkitGetUserMedia ||
+    //     	navigator.mediaDevices.mozGetUserMedia;
+    //
+    //     // ask for an audio input
+    //     navigator.mediaDevices.getUserMedia(
+    //     {
+    //         "audio": {
+    //             "mandatory": {
+    //                 "googEchoCancellation": "false",
+    //                 "googAutoGainControl": "false",
+    //                 "googNoiseSuppression": "false",
+    //                 "googHighpassFilter": "false"
+    //             },
+    //             "optional": []
+    //         },
+    //     }, gotStream, didntGetStream);
+    // } catch (e) {
+    //     alert('getUserMedia not supported on your browser! :' + e);
+    // }
 }
 
 function didntGetStream() {
@@ -69,8 +92,8 @@ function didntGetStream() {
 var mediaStreamSource = null;
 
 function gotStream(stream) {
-    console.log("hello")
-    audioContext.resume();
+    // console.log("hello")
+    // audioContext.resume();
     // Create an AudioNode from the stream.
     mediaStreamSource = audioContext.createMediaStreamSource(stream);
 
