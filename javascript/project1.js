@@ -33,7 +33,6 @@ window.onload = function() {
     audioContext = new(window.AudioContext || window.webkitAudioContext)(); // cross-browser
     var microphone;
 
-    var analyser = audioContext.createAnalyser();
 
     //main block for doing the audio recording
     if (navigator.mediaDevices.getUserMedia) {
@@ -42,47 +41,12 @@ window.onload = function() {
         navigator.mediaDevices.getUserMedia(constraints)
             .then(
                 function(stream) {
-                    // microphone = audioContext.createMediaStreamSource(stream); // source node = microphone
-                    // microphone.connect(analyser); // connect microphone node to analyser node
-                    //analyser.connect(audioContext.destination); // connect analyser node to destination aka speakers. omit this line for no output
-                    //beginRecording();
                     gotStream(stream)
                 })
             .catch(function(err) { console.log('The following error occured: ' + err); })
     } else {
         console.log('getUserMedia not supported on your browser!');
     }
-
-    // // monkeypatch Web Audio
-    // window.AudioContext = window.AudioContext || window.webkitAudioContext;
-    //
-    // // grab an audio context
-    // audioContext = new AudioContext();
-    //
-    // // Attempt to get audio input
-    // try {
-    //     // monkeypatch getUserMedia
-    //     navigator.mediaDevices.getUserMedia =
-    //     	navigator.mediaDevices.getUserMedia ||
-    //     	navigator.mediaDevices.webkitGetUserMedia ||
-    //     	navigator.mediaDevices.mozGetUserMedia;
-    //
-    //     // ask for an audio input
-    //     navigator.mediaDevices.getUserMedia(
-    //     {
-    //         "audio": {
-    //             "mandatory": {
-    //                 "googEchoCancellation": "false",
-    //                 "googAutoGainControl": "false",
-    //                 "googNoiseSuppression": "false",
-    //                 "googHighpassFilter": "false"
-    //             },
-    //             "optional": []
-    //         },
-    //     }, gotStream, didntGetStream);
-    // } catch (e) {
-    //     alert('getUserMedia not supported on your browser! :' + e);
-    // }
 }
 
 function didntGetStream() {
@@ -92,24 +56,17 @@ function didntGetStream() {
 var mediaStreamSource = null;
 
 function gotStream(stream) {
-    // console.log("hello")
-    // audioContext.resume();
     // Create an AudioNode from the stream.
     mediaStreamSource = audioContext.createMediaStreamSource(stream);
 
     // Create a new volume meter and connect it.
     meter = createAudioMeter(audioContext);
     mediaStreamSource.connect(meter);
-
-    // kick off the visual updating
-
 }
 
 function drawLoop( time) {
     // clear the background
     canvasContext.clearRect(0,0,WIDTH,HEIGHT);
-
-
 
     // check if we're currently clipping
     if (meter.checkClipping()){
@@ -140,7 +97,6 @@ $( document ).ready(function() {
     $("#winners").hide()
     $("#results").hide()
 
-
     $("#player-input").submit(function( event ) {
         event.preventDefault();
         var player
@@ -168,7 +124,6 @@ $( document ).ready(function() {
                 player = [$("#player6").first().val(),0,0]
                 playerData.push(player)
             }
-
             gameChoice = $("input[name='gameChoice']:checked").val();
 
             startGame()
@@ -179,7 +134,7 @@ $( document ).ready(function() {
 
 
     $("#next").click(function (){
-        startPlayer()
+        startPlayer(false)
     })
 
     $("#results").click(function (){
@@ -206,7 +161,8 @@ function startGame(){
 
     if(gameChoice == "match"){
         $("#mode-instruction").text(" , match the black bars with your voice in ")
-        matchSound = 0.5
+        $("#instruction").text("Match The Balck Bar!")
+        matchSound = (Math.random() * (0.500 - 0.150) + 0.150).toFixed(4)
         canvasMatch.fillStyle = "rgba(0,0,0,0.8)"
         canvasMatch.fillRect(0, 0, matchSound*WIDTH, HEIGHT);
     }else{
@@ -219,10 +175,10 @@ function startGame(){
 
     audioContext.suspend()
 
-    startPlayer()
+    startPlayer(true)
 }
 
-function startPlayer(){
+function startPlayer(player1){
     $("#current-player").show()
     $("#countdown").text(5)
     $("#player").text(playerData[currentIndex][0])
@@ -231,7 +187,12 @@ function startPlayer(){
     $("#loundness").hide()
     $("#next-player-up").hide()
 
-    $("#canvas").hide()
+    if(!player1){
+        $("#canvas").hide()
+    }else{
+        $("#canvas").show()
+    }
+
 
     maxVolume = 0;
     meter.volume = 0
@@ -270,7 +231,6 @@ function playerTurn(){
         $("#time").text(counter)
         if (counter == 0) {
             loud = loundness.slice()
-            // console.log(loud)
             audioContext.suspend()
             // $("#loundness").show()
             // $("#maxVolume").text(maxVolume.toFixed(2))
@@ -307,13 +267,15 @@ function gameOver(){
         sortedArray = sortedArray.sort((a, b) => Math.abs(a[1] -  matchSound) - Math.abs(b[1] - matchSound));
     }
 
+    console.log(sortedArray)
+
     $("#current-player").hide()
     $("#remiainig-time").hide()
     $("#loundness").hide()
     $("#next-player-up").hide()
     $("#results").hide()
 
-    audioContext.suspend()
+    audioContext.close()
     maxVolume = 0;
     meter.volume = 0
 
@@ -321,8 +283,6 @@ function gameOver(){
     canvasContext.clearRect(0,0,0,HEIGHT);
 
     $("#canvas").hide()
-
-
 
     $("#winner").text(sortedArray[0][0])
     if(sortedArray.length>1){
