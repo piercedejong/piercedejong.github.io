@@ -66,10 +66,20 @@ body{
 .navbar, .nav-links, .link{
     text-shadow: 2px 2px black;
     color:white;
+    padding:0px;
 }
 .nav-links{
     display: block;
     padding: .5rem 1rem;
+    font-size: 1.15rem;
+}
+
+.navbar-nav{
+    background-color: rgba(0,0,0,0.2);
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border: 2px solid black;
+    border-top: none;
 }
 
 .link{
@@ -85,7 +95,12 @@ a:hover{
 
 .navbar-brand:hover{
     color: orange !important;
-    text-decoration: none
+    text-decoration: none;
+
+}
+
+.navbar-brand{
+    font-size: 1.5rem;
 }
 
 .container-project0{
